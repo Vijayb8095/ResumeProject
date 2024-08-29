@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="ResumeServlet" method="post">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div>
+            <label for="skills">Skills:</label>
+            <textarea id="skills" name="skills" required></textarea>
+        </div>
+        <div>
+            <label for="experience">Experience:</label>
+            <textarea id="experience" name="experience" required></textarea>
+        </div>
+        <div>
+            <label for="education">Education:</label>
+            <textarea id="education" name="education" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+        <div>
+            <p style="color:green;">
+                <!-- Display success message if resume submission is successful -->
+                <% if (request.getParameter("success") != null) { %>
+                    Resume submitted successfully. <a href="<%= request.getParameter("file") %>">Download PDF</a>
+                <% } %>
+            </p>
+        </div>
+    </form>
+</body>
+</html>

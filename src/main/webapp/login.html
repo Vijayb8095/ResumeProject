@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ <form action="LoginServlet" method="post">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Login</button>
+        <div>
+            <p style="color:red;">
+                <!-- Display error if login fails -->
+                <% if (request.getParameter("error") != null) { %>
+                    Invalid username or password
+                <% } %>
+            </p>
+        </div>
+    </form>
+</body>
+</html>
